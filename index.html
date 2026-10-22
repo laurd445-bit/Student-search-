@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UPSA Accounting & Finance Class 3 - Student Verification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Accounting and Finance 3 Secretariat - Student Verification</title>
   <!-- Google Fonts & Font Awesome Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -16,51 +16,77 @@
       --secondary-navy: #0f2b50;
       --accent-gold: #f5ba00;
       --gold-hover: #e0aa00;
-      --light-gold: #fff5d6;
+      --light-gold: #fff8e1;
       --text-dark: #1e293b;
       --text-light: #64748b;
-      --bg-gradient: linear-gradient(135deg, #071527 0%, #0d2342 50%, #153561 100%);
+      --bg-gradient: linear-gradient(135deg, #05101f 0%, #0a1d37 60%, #102a4e 100%);
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
       background-color: #f1f5f9;
       color: var(--text-dark);
     }
 
-    /* Hero Banner Header */
+    /* Hero Banner Header with Eagle Background */
     .hero-header {
       background: var(--bg-gradient);
       color: #ffffff;
-      padding: 40px 20px 60px 20px;
+      padding: 45px 15px 55px 15px;
       text-align: center;
       position: relative;
       border-bottom: 6px solid var(--accent-gold);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      width: 100%;
+    }
+
+    /* Huge Eagle Background Icon */
+    .hero-header::before {
+      content: "\f6c4"; /* FontAwesome Eagle Icon */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 26rem; /* Huge Eagle Face */
+      color: rgba(245, 186, 0, 0.08); /* Gold Glow Effect */
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .badge-tag {
       background: var(--accent-gold);
       color: var(--primary-navy);
       font-weight: 800;
-      font-size: 1rem;
-      padding: 6px 20px;
+      font-size: 0.9rem;
+      padding: 8px 22px;
       border-radius: 50px;
       display: inline-block;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       margin-bottom: 15px;
-      box-shadow: 0 4px 12px rgba(245, 186, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(245, 186, 0, 0.4);
     }
 
     .hero-title {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       font-weight: 800;
       margin: 10px 0;
       line-height: 1.2;
@@ -70,22 +96,23 @@
     .hero-title span {
       color: var(--accent-gold);
       display: block;
-      font-size: 3.2rem;
+      font-size: 2.8rem;
     }
 
     .slogan {
       font-style: italic;
       font-weight: 300;
       color: #cbd5e1;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-top: 10px;
     }
 
-    /* Main Container */
+    /* Main Section - Full Mobile Width */
     .main-container {
-      max-width: 1100px;
-      margin: -30px auto 50px auto;
-      padding: 0 20px;
+      width: 100%;
+      max-width: 1200px;
+      margin: -25px auto 40px auto;
+      padding: 0 10px;
       position: relative;
       z-index: 10;
     }
@@ -93,35 +120,44 @@
     .card-box {
       background: #ffffff;
       border-radius: 16px;
-      padding: 35px;
+      padding: 25px 15px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
       border: 1px solid #e2e8f0;
+      width: 100%;
     }
 
     .notice-box {
       background-color: var(--light-gold);
       border-left: 5px solid var(--accent-gold);
-      padding: 18px 22px;
+      padding: 15px 18px;
       border-radius: 8px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
     }
 
     .notice-box i {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: #b48500;
+      flex-shrink: 0;
     }
 
     .notice-box p {
       margin: 0;
-      font-size: 0.98rem;
+      font-size: 0.92rem;
       color: #5c4500;
       font-weight: 500;
+      line-height: 1.4;
     }
 
-    /* Table Styling */
+    /* Full Width Responsive Table Wrapper */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
     table.dataTable {
       width: 100% !important;
       border-collapse: separate !important;
@@ -134,17 +170,18 @@
     table.dataTable thead th {
       background-color: var(--primary-navy) !important;
       color: var(--accent-gold) !important;
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      padding: 16px 20px !important;
+      padding: 14px 15px !important;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       border-bottom: none !important;
+      white-space: nowrap;
     }
 
     table.dataTable tbody td {
-      padding: 14px 20px !important;
-      font-size: 1rem;
+      padding: 12px 15px !important;
+      font-size: 0.95rem;
       color: var(--text-dark);
       border-bottom: 1px solid #f1f5f9;
       font-weight: 500;
@@ -158,36 +195,39 @@
       background-color: #f1f5f9 !important;
     }
 
-    /* Customizing DataTables Search Bar */
+    /* DataTables Search Input Styling */
     .dataTables_wrapper .dataTables_filter {
       float: none !important;
       text-align: center !important;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+      width: 100%;
     }
 
     .dataTables_wrapper .dataTables_filter label {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--primary-navy);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      width: 100%;
     }
 
     .dataTables_wrapper .dataTables_filter input {
-      width: 100%;
-      max-width: 500px;
-      height: 52px;
-      padding: 10px 20px 10px 45px;
+      width: 100% !important;
+      max-width: 600px;
+      height: 50px;
+      padding: 10px 18px 10px 42px;
       border: 2px solid var(--accent-gold);
       border-radius: 30px;
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-family: 'Poppins', sans-serif;
       outline: none;
       box-shadow: 0 4px 12px rgba(245, 186, 0, 0.15);
       transition: all 0.3s ease;
       background: #ffffff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%230a1d37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>') no-repeat 15px center;
+      margin-left: 0 !important;
     }
 
     .dataTables_wrapper .dataTables_filter input:focus {
@@ -195,11 +235,13 @@
       box-shadow: 0 6px 18px rgba(10, 29, 55, 0.25);
     }
 
-    /* Pagination and Info */
+    /* Pagination and Info Controls */
     .dataTables_wrapper .dataTables_info,
     .dataTables_wrapper .dataTables_paginate {
-      margin-top: 20px !important;
-      font-size: 0.95rem;
+      margin-top: 18px !important;
+      font-size: 0.9rem;
+      text-align: center !important;
+      float: none !important;
     }
 
     .dataTables_wrapper .dataTables_paginate .paginate_button.current {
@@ -213,39 +255,45 @@
     /* Footer */
     footer {
       text-align: center;
-      padding: 25px;
+      padding: 20px 15px;
       color: var(--text-light);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     @media (max-width: 768px) {
+      .hero-header::before {
+        font-size: 16rem;
+      }
       .hero-title {
-        font-size: 2rem;
+        font-size: 1.6rem;
       }
       .hero-title span {
-        font-size: 2.3rem;
+        font-size: 2rem;
       }
       .card-box {
-        padding: 20px 15px;
+        padding: 18px 10px;
+        border-radius: 12px;
       }
       table.dataTable thead th, 
       table.dataTable tbody td {
-        padding: 10px 12px !important;
-        font-size: 0.9rem;
+        padding: 10px 10px !important;
+        font-size: 0.88rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Header Section -->
+  <!-- Hero Header Section with Eagle Background -->
   <header class="hero-header">
-    <div class="badge-tag">UPSA Student Portal</div>
-    <h1 class="hero-title">
-      ACCOUNTING & FINANCE
-      <span>CLASS 3 ROSTER</span>
-    </h1>
-    <p class="slogan"><i class="fa-solid fa-quote-left"></i> Numbers Build Better Futures <i class="fa-solid fa-quote-right"></i></p>
+    <div class="hero-content">
+      <div class="badge-tag">ACCOUNTING AND FINANCE 3 SECRETARIAT</div>
+      <h1 class="hero-title">
+        CLASS 3 ROSTER
+        <span>VERIFICATION PORTAL</span>
+      </h1>
+      <p class="slogan"><i class="fa-solid fa-quote-left"></i> Numbers Build Better Futures <i class="fa-solid fa-quote-right"></i></p>
+    </div>
   </header>
 
   <!-- Main Content Card -->
@@ -254,124 +302,127 @@
       
       <div class="notice-box">
         <i class="fa-solid fa-circle-info"></i>
-        <p><strong>Verification Notice:</strong> Please enter your Full Name or Index Number in the search box below to confirm your details. If you spot any mistakes in your name or phone number, report it to the class administrator for immediate correction.</p>
+        <p><strong>Verification Notice:</strong> Search your Full Name or Index Number in the box below to check your details. Report any corrections to the Secretariat immediately.</p>
       </div>
 
-      <table id="studentTable" class="display cell-border stripe responsive nowrap">
-        <thead>
-          <tr>
-            <th>Index No.</th>
-            <th>Full Registered Name</th>
-            <th>Contact Number</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>10364505</td><td>Aaron Peprah Amuah</td><td>0593401805</td></tr>
-          <tr><td>10364543</td><td>Abdul Rahaman Muniru</td><td>0536956627</td></tr>
-          <tr><td>10359796</td><td>Abdul Razak Mubarak</td><td>0536285164</td></tr>
-          <tr><td>10359816</td><td>Abibu Mohammed Kwaku</td><td>0557015825</td></tr>
-          <tr><td>10359818</td><td>Aboadzi Edlorm Keli</td><td>0534328571</td></tr>
-          <tr><td>10364552</td><td>Adamusahbateeni Joana</td><td>0596021531</td></tr>
-          <tr><td>10364542</td><td>Agbleze Gabriel Edem</td><td>0534079918</td></tr>
-          <tr><td>10359814</td><td>Agortey Rebecca Fafali</td><td>0596278727</td></tr>
-          <tr><td>10364513</td><td>Agyeman-Prempeh Jake</td><td>0202130957</td></tr>
-          <tr><td>10364193</td><td>Akalisa Bismark</td><td>0248010311</td></tr>
-          <tr><td>10361059</td><td>Akortia Elizabeth</td><td>0553221785</td></tr>
-          <tr><td>10359767</td><td>Akyeampong George Laing</td><td>0593325441</td></tr>
-          <tr><td>10359797</td><td>Alexandrina Maa Ansaah Ankam</td><td>0206672041</td></tr>
-          <tr><td>10339918</td><td>Allotey Nii Kpakpo Samual</td><td>business math</td></tr>
-          <tr><td>10359779</td><td>Althea Naa Ameley Akweley Tagoe</td><td>0559656721</td></tr>
-          <tr><td>10359766</td><td>Amartey Isabella</td><td>0531772019</td></tr>
-          <tr><td>10364549</td><td>Amegbey Mackayla Awura Esi</td><td>0247696797</td></tr>
-          <tr><td>10364481</td><td>Ameyawhie Joana Eyram Adzoa</td><td>0596684870</td></tr>
-          <tr><td>10864473</td><td>Amoako Emmanuella Obenewaa</td><td>0502597769</td></tr>
-          <tr><td>10349985</td><td>Andrews Klu Mensah</td><td>French</td></tr>
-          <tr><td>10364546</td><td>Angel Dede Nuertey</td><td>0591748118</td></tr>
-          <tr><td>10364458</td><td>Angela Ackon</td><td>0535708197</td></tr>
-          <tr><td>10359786</td><td>Annang Deryl</td><td>0538331053</td></tr>
-          <tr><td>10359778</td><td>Antwi Ernest Alexander</td><td>0593934462</td></tr>
-          <tr><td>10364531</td><td>Appiah Maureen Anefoak</td><td>0506211240</td></tr>
-          <tr><td>10357994</td><td>Appiah Tracy Boademaa</td><td>0261802576</td></tr>
-          <tr><td>10359817</td><td>Arnold Oko Kpakpo Baah Lamptey</td><td>0534334465</td></tr>
-          <tr><td>10364530</td><td>Asem-Agbeko Worlanyo</td><td>0536179137</td></tr>
-          <tr><td>10359801</td><td>Atuluk Maroun Akankpabnam</td><td>0556476970</td></tr>
-          <tr><td>10359812</td><td>Augustine Deladem Kofi Dedzoe</td><td>0271403311</td></tr>
-          <tr><td>10323703</td><td>Awuku Florence Afi</td><td>0548393406</td></tr>
-          <tr><td>10361060</td><td>Bankas A. Prince</td><td>0536003654</td></tr>
-          <tr><td>10359773</td><td>Benedict Darkwa Frempong</td><td>0533211574</td></tr>
-          <tr><td>10864497</td><td>Benedict S. Aattiet</td><td>0535774504</td></tr>
-          <tr><td>10359785</td><td>Benjamin Amerone</td><td>0539716738</td></tr>
-          <tr><td>10864508</td><td>Bonsu Anastasia Yaa Serwaa</td><td>0539419257</td></tr>
-          <tr><td>10347152</td><td>Christian Afedu Actuaye</td><td>French</td></tr>
-          <tr><td>10364489</td><td>Cofie Benedicta Dedou</td><td>0596114096</td></tr>
-          <tr><td>10364558</td><td>Darko Samuel</td><td>0203887382</td></tr>
-          <tr><td>10860217</td><td>David Obeng-Bioh</td><td>0209425101</td></tr>
-          <tr><td>10359788</td><td>Desmond Boateng</td><td>0593843120 / 0244680273</td></tr>
-          <tr><td>10364534</td><td>Duah Nana Ama Ntiappiah</td><td>0208003079</td></tr>
-          <tr><td>10364517</td><td>Emmanuella Lucy Adams</td><td>0549569069</td></tr>
-          <tr><td>10360219</td><td>Erica Eyram Akosua Adzido</td><td>0594041221</td></tr>
-          <tr><td>10359806</td><td>Eyome Koku Ackuaku</td><td>0555493718</td></tr>
-          <tr><td>10364540</td><td>Forson Elliott Okpoti</td><td>0557527070</td></tr>
-          <tr><td>10364253</td><td>Isaac Nii Dodoo Darku</td><td>0533337407</td></tr>
-          <tr><td>10359765</td><td>Jed Samel Majdoub</td><td>0555076553</td></tr>
-          <tr><td>10359784</td><td>Jesse Tebbey</td><td>0550398796</td></tr>
-          <tr><td>10364514</td><td>Jessica Eyram Gidi</td><td>0591381484</td></tr>
-          <tr><td>10361057</td><td>John Evans Nasigri</td><td>0206591724</td></tr>
-          <tr><td>10364522</td><td>Kelly Patricia Elorm</td><td>0249249759</td></tr>
-          <tr><td>10364524</td><td>Kingsley Mante</td><td>0531911026</td></tr>
-          <tr><td>10364465</td><td>Koomson Kelvin Sekyi</td><td>0274588080</td></tr>
-          <tr><td>10364510</td><td>Korsah Mantey Joshua</td><td>0538173400</td></tr>
-          <tr><td>10364541</td><td>Kudwo Jeroniva Kloss</td><td>0571861640</td></tr>
-          <tr><td>10364488</td><td>Kwablah Anthony Tetteh</td><td>0576425107</td></tr>
-          <tr><td>10360220</td><td>Makame Jahla</td><td>0538722283</td></tr>
-          <tr><td>10364499</td><td>Matthew Ofori Dei</td><td>0531898527</td></tr>
-          <tr><td>10364511</td><td>Mensah Kelvin</td><td>0535644157</td></tr>
-          <tr><td>10364523</td><td>Mensah Minda</td><td>0600578986</td></tr>
-          <tr><td>10364515</td><td>Mirabelle Hutsifafa Adzewodo</td><td>0598217815</td></tr>
-          <tr><td>10359800</td><td>Na-Larbe Henry</td><td>0502992547</td></tr>
-          <tr><td>10359775</td><td>Nadia Venyala Salifu</td><td>0558166121</td></tr>
-          <tr><td>10364569</td><td>Nana Yaw Amor Amakye</td><td>0506948882</td></tr>
-          <tr><td>10359805</td><td>Nazeefa Suglo</td><td>0543334775</td></tr>
-          <tr><td>10364516</td><td>Nyarko Christine Adwoa Tiwaah</td><td>0257035067</td></tr>
-          <tr><td>10364402</td><td>Nyarko Isaac Aboagye</td><td>0535005621</td></tr>
-          <tr><td>10364483</td><td>Obonai Kelvin Nii Nai</td><td>0552616988</td></tr>
-          <tr><td>10364507</td><td>Ocloo Augustine Elorm</td><td>0534014312</td></tr>
-          <tr><td>10359777</td><td>Oda Korang David Williams</td><td>0500411345</td></tr>
-          <tr><td>10364498</td><td>Ofori Ama Frema</td><td>0209556851</td></tr>
-          <tr><td>10359772</td><td>Ofosu Bright Addy</td><td>0200303426</td></tr>
-          <tr><td>10359794</td><td>Okyere Nyarko Abigail</td><td>0506128743</td></tr>
-          <tr><td>10364568</td><td>Omari-Aboagye Priscilla</td><td>0204691908</td></tr>
-          <tr><td>10361099</td><td>Osei Bediako Jayden</td><td>0240013491</td></tr>
-          <tr><td>10364537</td><td>Osman Musah Iman Malitity</td><td>0539178178</td></tr>
-          <tr><td>10364566</td><td>Owusu Antoinnette</td><td>0553537871</td></tr>
-          <tr><td>10359807</td><td>Paddy Felix</td><td>0592330590</td></tr>
-          <tr><td>10359792</td><td>Prince Kow O.</td><td>0531485398</td></tr>
-          <tr><td>10364464</td><td>Priscilla Adjoa Yankey</td><td>0550012511</td></tr>
-          <tr><td>10364496</td><td>Queen Vanessa Korkor Tetteh</td><td>0559168201</td></tr>
-          <tr><td>10359815</td><td>Rene Enam Gyinerbi</td><td>0534552167</td></tr>
-          <tr><td>10371959</td><td>Richmond Nii Odatey Lamptey</td><td>0579582785</td></tr>
-          <tr><td>10359809</td><td>Righteous Nii Amarh</td><td>0555898565</td></tr>
-          <tr><td>10359764</td><td>Rita Nana Akua Agyekum</td><td>0207735734</td></tr>
-          <tr><td>10364538</td><td>Rose Assuah</td><td>0597868058</td></tr>
-          <tr><td>10364533</td><td>Sarpong Daniel Koranteng</td><td>0558256521</td></tr>
-          <tr><td>10364476</td><td>Selikem Justice Adjo</td><td>0537104024</td></tr>
-          <tr><td>10364536</td><td>Shehu Mohammed</td><td>0256032965</td></tr>
-          <tr><td>10364504</td><td>Tatse Wellington Deladem</td><td>0538624283</td></tr>
-          <tr><td>10359810</td><td>Tetteh Lawrencia Dede</td><td>0509894191</td></tr>
-          <tr><td>10364544</td><td>Tsra Jane Enam</td><td>0577960477</td></tr>
-          <tr><td>10364411</td><td>Tuffour Asare</td><td>0541509895</td></tr>
-          <tr><td>10361062</td><td>Twum Christiana Yeboah</td><td>0558601196</td></tr>
-          <tr><td>10364475</td><td>Twum-Konadu Akua Amponsah</td><td>0593872788</td></tr>
-          <tr><td>10364495</td><td>Villary Amankwaah</td><td>0257521388</td></tr>
-          <tr><td>10359787</td><td>Willett Crystal</td><td>0535464675</td></tr>
-          <tr><td>10364553</td><td>Zigah Caddeena Abena Nsowah</td><td>0251598595</td></tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <table id="studentTable" class="display cell-border stripe responsive nowrap">
+          <thead>
+            <tr>
+              <th>Index No.</th>
+              <th>Full Registered Name</th>
+              <th>Contact Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>10364505</td><td>Aaron Peprah Amuah</td><td>0593401805</td></tr>
+            <tr><td>10364543</td><td>Abdul Rahaman Muniru</td><td>0536956627</td></tr>
+            <tr><td>10359796</td><td>Abdul Razak Mubarak</td><td>0536285164</td></tr>
+            <tr><td>10359816</td><td>Abibu Mohammed Kwaku</td><td>0557015825</td></tr>
+            <tr><td>10359818</td><td>Aboadzi Edlorm Keli</td><td>0534328571</td></tr>
+            <tr><td>10364552</td><td>Adamusahbateeni Joana</td><td>0596021531</td></tr>
+            <tr><td>10364542</td><td>Agbleze Gabriel Edem</td><td>0534079918</td></tr>
+            <tr><td>10359814</td><td>Agortey Rebecca Fafali</td><td>0596278727</td></tr>
+            <tr><td>10364513</td><td>Agyeman-Prempeh Jake</td><td>0202130957</td></tr>
+            <tr><td>10364193</td><td>Akalisa Bismark</td><td>0248010311</td></tr>
+            <tr><td>10361059</td><td>Akortia Elizabeth</td><td>0553221785</td></tr>
+            <tr><td>10359767</td><td>Akyeampong George Laing</td><td>0593325441</td></tr>
+            <tr><td>10359797</td><td>Alexandrina Maa Ansaah Ankam</td><td>0206672041</td></tr>
+            <tr><td>10339918</td><td>Allotey Nii Kpakpo Samual</td><td>business math</td></tr>
+            <tr><td>10359779</td><td>Althea Naa Ameley Akweley Tagoe</td><td>0559656721</td></tr>
+            <tr><td>10359766</td><td>Amartey Isabella</td><td>0531772019</td></tr>
+            <tr><td>10364549</td><td>Amegbey Mackayla Awura Esi</td><td>0247696797</td></tr>
+            <tr><td>10364481</td><td>Ameyawhie Joana Eyram Adzoa</td><td>0596684870</td></tr>
+            <tr><td>10864473</td><td>Amoako Emmanuella Obenewaa</td><td>0502597769</td></tr>
+            <tr><td>10349985</td><td>Andrews Klu Mensah</td><td>French</td></tr>
+            <tr><td>10364546</td><td>Angel Dede Nuertey</td><td>0591748118</td></tr>
+            <tr><td>10364458</td><td>Angela Ackon</td><td>0535708197</td></tr>
+            <tr><td>10359786</td><td>Annang Deryl</td><td>0538331053</td></tr>
+            <tr><td>10359778</td><td>Antwi Ernest Alexander</td><td>0593934462</td></tr>
+            <tr><td>10364531</td><td>Appiah Maureen Anefoak</td><td>0506211240</td></tr>
+            <tr><td>10357994</td><td>Appiah Tracy Boademaa</td><td>0261802576</td></tr>
+            <tr><td>10359817</td><td>Arnold Oko Kpakpo Baah Lamptey</td><td>0534334465</td></tr>
+            <tr><td>10364530</td><td>Asem-Agbeko Worlanyo</td><td>0536179137</td></tr>
+            <tr><td>10359801</td><td>Atuluk Maroun Akankpabnam</td><td>0556476970</td></tr>
+            <tr><td>10359812</td><td>Augustine Deladem Kofi Dedzoe</td><td>0271403311</td></tr>
+            <tr><td>10323703</td><td>Awuku Florence Afi</td><td>0548393406</td></tr>
+            <tr><td>10361060</td><td>Bankas A. Prince</td><td>0536003654</td></tr>
+            <tr><td>10359773</td><td>Benedict Darkwa Frempong</td><td>0533211574</td></tr>
+            <tr><td>10864497</td><td>Benedict S. Aattiet</td><td>0535774504</td></tr>
+            <tr><td>10359785</td><td>Benjamin Amerone</td><td>0539716738</td></tr>
+            <tr><td>10864508</td><td>Bonsu Anastasia Yaa Serwaa</td><td>0539419257</td></tr>
+            <tr><td>10347152</td><td>Christian Afedu Actuaye</td><td>French</td></tr>
+            <tr><td>10364489</td><td>Cofie Benedicta Dedou</td><td>0596114096</td></tr>
+            <tr><td>10364558</td><td>Darko Samuel</td><td>0203887382</td></tr>
+            <tr><td>10860217</td><td>David Obeng-Bioh</td><td>0209425101</td></tr>
+            <tr><td>10359788</td><td>Desmond Boateng</td><td>0593843120 / 0244680273</td></tr>
+            <tr><td>10364534</td><td>Duah Nana Ama Ntiappiah</td><td>0208003079</td></tr>
+            <tr><td>10364517</td><td>Emmanuella Lucy Adams</td><td>0549569069</td></tr>
+            <tr><td>10360219</td><td>Erica Eyram Akosua Adzido</td><td>0594041221</td></tr>
+            <tr><td>10359806</td><td>Eyome Koku Ackuaku</td><td>0555493718</td></tr>
+            <tr><td>10364540</td><td>Forson Elliott Okpoti</td><td>0557527070</td></tr>
+            <tr><td>10364253</td><td>Isaac Nii Dodoo Darku</td><td>0533337407</td></tr>
+            <tr><td>10359765</td><td>Jed Samel Majdoub</td><td>0555076553</td></tr>
+            <tr><td>10359784</td><td>Jesse Tebbey</td><td>0550398796</td></tr>
+            <tr><td>10364514</td><td>Jessica Eyram Gidi</td><td>0591381484</td></tr>
+            <tr><td>10361057</td><td>John Evans Nasigri</td><td>0206591724</td></tr>
+            <tr><td>10364522</td><td>Kelly Patricia Elorm</td><td>0249249759</td></tr>
+            <tr><td>10364524</td><td>Kingsley Mante</td><td>0531911026</td></tr>
+            <tr><td>10364465</td><td>Koomson Kelvin Sekyi</td><td>0274588080</td></tr>
+            <tr><td>10364510</td><td>Korsah Mantey Joshua</td><td>0538173400</td></tr>
+            <tr><td>10364541</td><td>Kudwo Jeroniva Kloss</td><td>0571861640</td></tr>
+            <tr><td>10364488</td><td>Kwablah Anthony Tetteh</td><td>0576425107</td></tr>
+            <tr><td>10360220</td><td>Makame Jahla</td><td>0538722283</td></tr>
+            <tr><td>10364499</td><td>Matthew Ofori Dei</td><td>0531898527</td></tr>
+            <tr><td>10364511</td><td>Mensah Kelvin</td><td>0535644157</td></tr>
+            <tr><td>10364523</td><td>Mensah Minda</td><td>0600578986</td></tr>
+            <tr><td>10364515</td><td>Mirabelle Hutsifafa Adzewodo</td><td>0598217815</td></tr>
+            <tr><td>10359800</td><td>Na-Larbe Henry</td><td>0502992547</td></tr>
+            <tr><td>10359775</td><td>Nadia Venyala Salifu</td><td>0558166121</td></tr>
+            <tr><td>10364569</td><td>Nana Yaw Amor Amakye</td><td>0506948882</td></tr>
+            <tr><td>10359805</td><td>Nazeefa Suglo</td><td>0543334775</td></tr>
+            <tr><td>10364516</td><td>Nyarko Christine Adwoa Tiwaah</td><td>0257035067</td></tr>
+            <tr><td>10364402</td><td>Nyarko Isaac Aboagye</td><td>0535005621</td></tr>
+            <tr><td>10364483</td><td>Obonai Kelvin Nii Nai</td><td>0552616988</td></tr>
+            <tr><td>10364507</td><td>Ocloo Augustine Elorm</td><td>0534014312</td></tr>
+            <tr><td>10359777</td><td>Oda Korang David Williams</td><td>0500411345</td></tr>
+            <tr><td>10364498</td><td>Ofori Ama Frema</td><td>0209556851</td></tr>
+            <tr><td>10359772</td><td>Ofosu Bright Addy</td><td>0200303426</td></tr>
+            <tr><td>10359794</td><td>Okyere Nyarko Abigail</td><td>0506128743</td></tr>
+            <tr><td>10364568</td><td>Omari-Aboagye Priscilla</td><td>0204691908</td></tr>
+            <tr><td>10361099</td><td>Osei Bediako Jayden</td><td>0240013491</td></tr>
+            <tr><td>10364537</td><td>Osman Musah Iman Malitity</td><td>0539178178</td></tr>
+            <tr><td>10364566</td><td>Owusu Antoinnette</td><td>0553537871</td></tr>
+            <tr><td>10359807</td><td>Paddy Felix</td><td>0592330590</td></tr>
+            <tr><td>10359792</td><td>Prince Kow O.</td><td>0531485398</td></tr>
+            <tr><td>10364464</td><td>Priscilla Adjoa Yankey</td><td>0550012511</td></tr>
+            <tr><td>10364496</td><td>Queen Vanessa Korkor Tetteh</td><td>0559168201</td></tr>
+            <tr><td>10359815</td><td>Rene Enam Gyinerbi</td><td>0534552167</td></tr>
+            <tr><td>10371959</td><td>Richmond Nii Odatey Lamptey</td><td>0579582785</td></tr>
+            <tr><td>10359809</td><td>Righteous Nii Amarh</td><td>0555898565</td></tr>
+            <tr><td>10359764</td><td>Rita Nana Akua Agyekum</td><td>0207735734</td></tr>
+            <tr><td>10364538</td><td>Rose Assuah</td><td>0597868058</td></tr>
+            <tr><td>10364533</td><td>Sarpong Daniel Koranteng</td><td>0558256521</td></tr>
+            <tr><td>10364476</td><td>Selikem Justice Adjo</td><td>0537104024</td></tr>
+            <tr><td>10364536</td><td>Shehu Mohammed</td><td>0256032965</td></tr>
+            <tr><td>10364504</td><td>Tatse Wellington Deladem</td><td>0538624283</td></tr>
+            <tr><td>10359810</td><td>Tetteh Lawrencia Dede</td><td>0509894191</td></tr>
+            <tr><td>10364544</td><td>Tsra Jane Enam</td><td>0577960477</td></tr>
+            <tr><td>10364411</td><td>Tuffour Asare</td><td>0541509895</td></tr>
+            <tr><td>10361062</td><td>Twum Christiana Yeboah</td><td>0558601196</td></tr>
+            <tr><td>10364475</td><td>Twum-Konadu Akua Amponsah</td><td>0593872788</td></tr>
+            <tr><td>10364495</td><td>Villary Amankwaah</td><td>0257521388</td></tr>
+            <tr><td>10359787</td><td>Willett Crystal</td><td>0535464675</td></tr>
+            <tr><td>10364553</td><td>Zigah Caddeena Abena Nsowah</td><td>0251598595</td></tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </main>
 
   <footer>
-    <p>&copy; University of Professional Studies, Accra (UPSA) - Accounting & Finance Class 3</p>
+    <p>&copy; Accounting and Finance 3 Secretariat</p>
   </footer>
 
   <!-- Scripts -->
